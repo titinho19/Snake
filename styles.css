@@ -15,10 +15,12 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: #d3d3d3;
-    border: 12px solid #4c4c4c;
+    border: 8px solid #4c4c4c;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 400px;
 }
 
 #game-boy h1 {
@@ -36,16 +38,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    width: 360px;
-    height: 300px;
+    width: 100%;
+    height: auto;
     background-color: #9cb6a3;
-    border: 12px solid #4c4c4c;
+    border: 8px solid #4c4c4c;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 #game-board {
     position: relative;
-    width: 260px;
+    width: 100%;
+    max-width: 260px;
     height: 260px;
     background-color: #000;
     border: 2px solid #fff;
@@ -55,7 +59,6 @@ body {
 }
 
 #score-board {
-    width: 80px;
     margin-left: 10px;
     color: #fff;
     text-align: center;
@@ -100,7 +103,8 @@ button:active {
 #controls > div {
     display: flex;
     justify-content: space-between;
-    width: 160px; /* Ajustamos el ancho del contenedor de los botones izquierda y derecha */
+    width: 100%; /* Ajustamos el ancho del contenedor de los botones izquierda y derecha */
+    max-width: 160px;
 }
 
 #controls button {
@@ -118,4 +122,18 @@ button:active {
 #controls button:active {
     box-shadow: 0 2px #2b2b2b;
     transform: translateY(2px);
+}
+
+@media (max-width: 600px) {
+    #game-board {
+        height: 200px;
+    }
+    #controls button {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    #controls > div {
+        max-width: 140px;
+    }
 }
